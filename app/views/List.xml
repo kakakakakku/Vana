@@ -1,0 +1,16 @@
+<Alloy>
+  <Window title="Tasks">
+    <RightNavButton platform="ios">
+      <Button title="Add" onClick="addQ" id="addButton" />
+    </RightNavButton>
+    <!-- タスク一覧 -->
+    <TableView id="tasks" dataCollection="Todo" dataTransform="transData" dataFilter="filterData">
+      <TableViewRow onClick="doneConfirm" _id="{alloy_id}">
+        <View id="taskWrap">
+          <Label class="taskText" id="task" text="{task}" />
+          <Label class="taskText" id="limitTime" text="{limitTime}" />
+        </View>
+      </TableViewRow>
+    </TableView>
+  </Window>
+</Alloy>

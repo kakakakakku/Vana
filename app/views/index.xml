@@ -1,0 +1,12 @@
+<Alloy>
+  <TabGroup onOpen="tabOpen" onFocus="tabFocus">
+  	<!-- 資格一覧表示タブ -->
+  	<!-- TODO: id名を変更する -->
+    <Tab title="資格一覧" id="tasksTab">
+      <Require type="view" src="Tasks" />
+    </Tab>
+    <Tab title="Done" id="doneTab">
+      <Require type="view" src="Done" />
+    </Tab>
+  </TabGroup>
+</Alloy>
