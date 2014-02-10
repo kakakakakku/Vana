@@ -51,7 +51,7 @@ function Controller() {
             fontWeight: "bold"
         },
         textAlign: "left",
-        color: "#333333",
+        color: "#FFFFFF",
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         top: "11dp",
@@ -68,24 +68,7 @@ function Controller() {
             fontWeight: "bold"
         },
         textAlign: "left",
-        color: "#333333",
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        top: "11dp",
-        bottom: "11dp",
-        left: "11dp",
-        right: "11dp",
-        text: "カテゴリー",
-        id: "__alloyId29"
-    });
-    $.__views.addWrap.add($.__views.__alloyId29);
-    $.__views.__alloyId30 = Ti.UI.createLabel({
-        font: {
-            fontSize: "16sp",
-            fontWeight: "bold"
-        },
-        textAlign: "left",
-        color: "#333333",
+        color: "#FFFFFF",
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         top: "11dp",
@@ -93,9 +76,9 @@ function Controller() {
         left: "11dp",
         right: "11dp",
         text: "取得日",
-        id: "__alloyId30"
+        id: "__alloyId29"
     });
-    $.__views.addWrap.add($.__views.__alloyId30);
+    $.__views.addWrap.add($.__views.__alloyId29);
     $.__views.todoLimit = Ti.UI.createPicker({
         type: Ti.UI.PICKER_TYPE_DATE,
         locale: "ja",
@@ -103,13 +86,13 @@ function Controller() {
     });
     $.__views.addWrap.add($.__views.todoLimit);
     setLimitTime ? $.__views.todoLimit.addEventListener("change", setLimitTime) : __defers["$.__views.todoLimit!change!setLimitTime"] = true;
-    $.__views.__alloyId31 = Ti.UI.createLabel({
+    $.__views.__alloyId30 = Ti.UI.createLabel({
         font: {
             fontSize: "16sp",
             fontWeight: "bold"
         },
         textAlign: "left",
-        color: "#333333",
+        color: "#FFFFFF",
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         top: "11dp",
@@ -117,9 +100,9 @@ function Controller() {
         left: "11dp",
         right: "11dp",
         text: "コメント",
-        id: "__alloyId31"
+        id: "__alloyId30"
     });
-    $.__views.addWrap.add($.__views.__alloyId31);
+    $.__views.addWrap.add($.__views.__alloyId30);
     $.__views.inputTask = Ti.UI.createTextArea({
         font: {
             fontSize: "16sp"
@@ -130,8 +113,6 @@ function Controller() {
         bottom: "11dp",
         left: "11dp",
         right: "11dp",
-        borderWidth: 1,
-        borderColor: "#CCCCCC",
         id: "inputTask"
     });
     $.__views.addWrap.add($.__views.inputTask);
@@ -141,7 +122,6 @@ function Controller() {
         bottom: "11dp",
         left: "11dp",
         right: "11dp",
-        height: "44dp",
         id: "saveTask",
         title: "保存する"
     });

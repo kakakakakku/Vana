@@ -1,5 +1,16 @@
 function Controller() {
     function tabOpen(e) {
+        var activity = $.index.getActivity();
+        activity.onCreateOptionsMenu = function(e2) {
+            var menuItem = e2.menu.add({
+                title: "Add",
+                icon: "/images/ic_action_edit.png",
+                showAsAction: Ti.Android.SHOW_AS_ACTION_IF_ROOM
+            });
+            var tasksController = Alloy.createController("List");
+            menuItem.addEventListener("click", tasksController.addTask);
+        };
+        activity.invalidateOptionsMenu();
         Alloy.Globals.currentTab = e.activeTab;
     }
     function tabFocus(e) {
@@ -13,31 +24,31 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    var __alloyId32 = [];
-    $.__views.__alloyId33 = Alloy.createController("Tasks", {
-        id: "__alloyId33"
+    var __alloyId31 = [];
+    $.__views.__alloyId32 = Alloy.createController("Tasks", {
+        id: "__alloyId32"
     });
     $.__views.tasksTab = Ti.UI.createTab({
-        window: $.__views.__alloyId33.getViewEx({
+        window: $.__views.__alloyId32.getViewEx({
             recurse: true
         }),
         title: "資格一覧",
         id: "tasksTab"
     });
-    __alloyId32.push($.__views.tasksTab);
-    $.__views.__alloyId35 = Alloy.createController("Done", {
-        id: "__alloyId35"
+    __alloyId31.push($.__views.tasksTab);
+    $.__views.__alloyId34 = Alloy.createController("Done", {
+        id: "__alloyId34"
     });
     $.__views.doneTab = Ti.UI.createTab({
-        window: $.__views.__alloyId35.getViewEx({
+        window: $.__views.__alloyId34.getViewEx({
             recurse: true
         }),
         title: "Done",
         id: "doneTab"
     });
-    __alloyId32.push($.__views.doneTab);
+    __alloyId31.push($.__views.doneTab);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId32,
+        tabs: __alloyId31,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);
