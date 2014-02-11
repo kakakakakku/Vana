@@ -91,7 +91,7 @@ function Controller() {
     var __defers = {};
     $.__views.Tasks = Ti.UI.createWindow({
         backgroundColor: "#FFFFFF",
-        title: "Tasks",
+        title: "資格管理アプリ",
         id: "Tasks"
     });
     $.__views.Tasks && $.addTopLevelView($.__views.Tasks);

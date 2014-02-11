@@ -21,7 +21,7 @@ function Controller() {
         window: $.__views.__alloyId33.getViewEx({
             recurse: true
         }),
-        title: "資格一覧",
+        title: "取得資格一覧",
         id: "tasksTab"
     });
     __alloyId32.push($.__views.tasksTab);
@@ -32,7 +32,7 @@ function Controller() {
         window: $.__views.__alloyId35.getViewEx({
             recurse: true
         }),
-        title: "Done",
+        title: "取得予定資格一覧",
         id: "doneTab"
     });
     __alloyId32.push($.__views.doneTab);

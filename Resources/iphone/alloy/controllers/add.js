@@ -97,7 +97,7 @@ function Controller() {
     });
     $.__views.addWrap.add($.__views.__alloyId30);
     $.__views.todoLimit = Ti.UI.createPicker({
-        type: Ti.UI.PICKER_TYPE_DATE,
+        type: Ti.UI.PICKER_TYPE_COUNT_DOWN_TIMER,
         locale: "ja",
         id: "todoLimit"
     });
