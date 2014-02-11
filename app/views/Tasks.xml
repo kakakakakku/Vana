@@ -1,5 +1,5 @@
 <Alloy>
-  <Window title="Tasks">
+  <Window title="資格管理アプリ">
     <RightNavButton platform="ios">
       <Button title="Add" onClick="addTask" id="addButton" />
     </RightNavButton>
