@@ -1,0 +1,19 @@
+<Alloy>
+	<Window title="Passed Certifications List">
+		<RightNavButton platform="ios">
+			<Button title="Add" onClick="addCert" id="addButton" />
+		</RightNavButton>
+		<!-- TODO: 長押しで削除できるようにする -->
+		<TableView id="certsList" dataCollection="certifications" dataTransform="transData" dataFilter="filterData" onLongpress="onLongPress">
+			<TableViewRow onClick="doneConfirm" _id="{alloy_id}">
+				<View id="certsWrap">
+					<Label class="list" id="task" text="{name}" />
+					<Label class="list" id="category" text="{category}" />
+					<Label class="list" id="timestamp" text="{timestamp}" />
+					<!-- TODO: 動的にアイコンを変更できるようにする -->
+				</View>
+				<ImageView id="image" image="/appicon.png" />
+			</TableViewRow>
+		</TableView>
+	</Window>
+</Alloy>

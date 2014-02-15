@@ -1,0 +1,28 @@
+<Alloy>
+	<Window id="addCertsWin" title="Passed Infomation" tabBarHidden="true">
+		<ScrollView id="addCertsWrap" layout="vertical" onClick="blurTextArea">
+			<Label>資格名</Label>
+			<Picker id="name" onChange="setName" selectionIndicator="true" useSpinner="true">
+				<PickerColumn id="certifications">
+					<PickerRow title="データベーススペシャリスト" />
+					<PickerRow title="ネットワークスペシャリスト" />
+					<PickerRow title="セキュリティスペシャリスト" />
+					<PickerRow title="エンベデッドスペシャリスト" />
+				</PickerColumn>
+			</Picker>
+			<Label>カテゴリー</Label>
+			<Picker id="category" onChange="setCategory" selectionIndicator="true" useSpinner="true">
+				<PickerColumn id="categories">
+					<PickerRow title="プログラミング" />
+					<PickerRow title="サーバー" />
+					<PickerRow title="マークアップ" />
+				</PickerColumn>
+			</Picker>
+			<Label>資格取得日</Label>
+			<Picker id="timestamp" />
+			<Label>コメント</Label>
+			<TextArea id="comment" />
+			<Button id="saveCert" title="保存する" onClick="saveCert" />
+		</ScrollView>
+	</Window>
+</Alloy>
