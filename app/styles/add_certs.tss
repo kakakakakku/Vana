@@ -1,6 +1,7 @@
 "#addWin[platform=ios]": {
   backgroundColor: "#FFFFFF"
 }
+
 "Label": {
   font: {
     fontSize: "16sp",
@@ -13,37 +14,47 @@
   top: "11dp",
   bottom: "11dp",
   left: "11dp",
-  right: "11dp"
+  right: "11dp",
+  backgroundColor: "#FFF000"
 }
+
 "Label[platform=android]": {
   color: "#FFFFFF"
 }
-"#todoLimit": {
+
+"#name": {
+  type: Ti.UI.PICKER_TYPE_PLAIN,
+  width: Ti.UI.FILL,
+  layout: "vertical"
+}
+
+
+
+"#timestamp": {
   type: Ti.UI.PICKER_TYPE_DATE,
   locale: "ja"
 }
-"#inputTask": {
+
+"#comment": {
   font: {
     fontSize: "16sp"
   },
   width: Ti.UI.FILL,
-  height: "96dp",
+  height: "30dp",
   top: "11dp",
   bottom: "11dp",
   left: "11dp",
   right: "11dp"
 }
-"#inputTask[platform=ios]": {
-  borderWidth: 1,
-  borderColor: "#CCCCCC"
-}
-"#saveTask": {
+
+"#saveCert": {
   width: Ti.UI.FILL,
   top: "11dp",
   bottom: "11dp",
   left: "11dp",
   right: "11dp"
 }
-"#saveTask[platform=ios]": {
+
+"#saveCert[platform=ios]": {
   height: '44dp'
 }

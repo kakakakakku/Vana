@@ -1,12 +1,7 @@
 <Alloy>
-  <TabGroup onOpen="tabOpen" onFocus="tabFocus">
-  	<!-- 資格一覧表示タブ -->
-  	<!-- TODO: id名を変更する -->
-    <Tab title="取得資格一覧" id="tasksTab">
-      <Require type="view" src="Tasks" />
-    </Tab>
-    <Tab title="取得予定資格一覧" id="doneTab">
-      <Require type="view" src="Done" />
-    </Tab>
-  </TabGroup>
+	<TabGroup onOpen="tabOpen" onFocus="tabFocus">
+		<Tab title="Passed Certifications" id="PassedCertsTab">
+			<Require type="view" src="passed_certs" />
+		</Tab>
+	</TabGroup>
 </Alloy>

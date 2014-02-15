@@ -13,31 +13,20 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    var __alloyId32 = [];
-    $.__views.__alloyId33 = Alloy.createController("Tasks", {
-        id: "__alloyId33"
+    var __alloyId13 = [];
+    $.__views.__alloyId14 = Alloy.createController("passed_certs", {
+        id: "__alloyId14"
     });
-    $.__views.tasksTab = Ti.UI.createTab({
-        window: $.__views.__alloyId33.getViewEx({
+    $.__views.PassedCertsTab = Ti.UI.createTab({
+        window: $.__views.__alloyId14.getViewEx({
             recurse: true
         }),
-        title: "取得資格一覧",
-        id: "tasksTab"
+        title: "Passed Certifications",
+        id: "PassedCertsTab"
     });
-    __alloyId32.push($.__views.tasksTab);
-    $.__views.__alloyId35 = Alloy.createController("Done", {
-        id: "__alloyId35"
-    });
-    $.__views.doneTab = Ti.UI.createTab({
-        window: $.__views.__alloyId35.getViewEx({
-            recurse: true
-        }),
-        title: "取得予定資格一覧",
-        id: "doneTab"
-    });
-    __alloyId32.push($.__views.doneTab);
+    __alloyId13.push($.__views.PassedCertsTab);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId32,
+        tabs: __alloyId13,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);
@@ -49,7 +38,7 @@ function Controller() {
     $.index.addEventListener("close", function() {
         $.destroy();
     });
-    Alloy.Collections.Todo.fetch();
+    Alloy.Collections.certifications.fetch();
     __defers["$.__views.index!open!tabOpen"] && $.__views.index.addEventListener("open", tabOpen);
     __defers["$.__views.index!focus!tabFocus"] && $.__views.index.addEventListener("focus", tabFocus);
     _.extend($, exports);

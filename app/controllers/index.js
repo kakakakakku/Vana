@@ -11,8 +11,8 @@ function tabOpen(e) {
 
       // Tasks コントローラのオブジェクトを作り、
       // そのメソッドとして addTask を呼び出す
-      var tasksController = Alloy.createController('List');
-      menuItem.addEventListener('click', tasksController.addTask);
+      var tasksController = Alloy.createController('passed_certs');
+      menuItem.addEventListener('click', tasksController.addCert);
     };
     activity.invalidateOptionsMenu();
   }
@@ -25,10 +25,12 @@ function tabFocus(e) {
   Alloy.Globals.currentTab = e.tab;
 }
 
+
+
 $.index.open();
 
 $.index.addEventListener("close", function () {
   $.destroy();
 });
 
-Alloy.Collections.Todo.fetch();
+Alloy.Collections.certifications.fetch();

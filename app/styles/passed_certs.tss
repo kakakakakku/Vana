@@ -1,7 +1,8 @@
 "#addButton[platform=ios]": {
   systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
 }
-"#taskWrap": {
+
+"#certsWrap": {
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   top: "6dp",
@@ -10,19 +11,28 @@
   left: "11dp",
   layout: "horizontal"
 }
-".taskText": {
+
+".list": {
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
   textAlign: "left"
 }
-"#task": {
+
+"#name": {
   font: {
     fontSize: "18sp",
     fontWeight: "bold"
   }
 }
-"#limitTime": {
+
+"#timestamp": {
   font: {
     fontSize: "14sp"
   }
+}
+
+"#image": {
+        width: "60dp",
+        height: "60dp",
+        right: "10dp"
 }
