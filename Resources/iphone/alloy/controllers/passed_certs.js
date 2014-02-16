@@ -81,7 +81,13 @@ function Controller() {
         var index = e.index;
         Ti.API.info("LongPress: index=" + index);
         dialogs.confirm({
-            message: "Can I delete it?"
+            message: "Can I delete it?",
+            callback: function() {
+                var model = Alloy.Collections.certifications.where({
+                    alloy_id: e.rowData._id
+                })[0];
+                model.destroy();
+            }
         });
     }
     function transData(model) {
