@@ -47,7 +47,10 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module device="iphone">dk.napp.social</module>
+        <module device="iphone" version="1.5.0">ti.admob</module>
+    </modules>
     <deployment-targets>
         <target device="android">true</target>
         <target device="blackberry">false</target>

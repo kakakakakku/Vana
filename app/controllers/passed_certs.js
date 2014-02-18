@@ -59,3 +59,16 @@ function filterData(collection) {
 	});
 }
 
+Titanium.Admob = require('ti.admob');
+function createAdView() {
+	var adview = Titanium.Admob.createView({
+		width : 320,
+		height : 50,
+		bottom : 0,
+		adBackgroundColor : 'black',
+		publisherId : "ca-app-pub-5780507516645638/2816430775"
+	});
+	return adview;
+}
+// 広告を非表示にする場合はここをコメントアウトする
+$.passedCerts.add(createAdView());

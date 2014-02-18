@@ -1,5 +1,5 @@
 <Alloy>
-	<Window title="Passed Certifications List">
+	<Window title="Passed Certifications List" id="passedCerts">
 		<RightNavButton platform="ios">
 			<Button title="Add" onClick="addCert" id="addButton" />
 		</RightNavButton>
