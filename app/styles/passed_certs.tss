@@ -2,6 +2,10 @@
   systemButton: Ti.UI.iPhone.SystemButton.COMPOSE
 }
 
+"#certsList": {
+  backgroundColor:'#F0E68C'
+}
+
 "#certsWrap": {
   width: Ti.UI.FILL,
   height: Ti.UI.SIZE,
@@ -20,19 +24,20 @@
 
 "#name": {
   font: {
-    fontSize: "18sp",
+  	color:'#FF0000',
+    fontSize: "20sp",
     fontWeight: "bold"
   }
 }
 
 "#timestamp": {
   font: {
-    fontSize: "14sp"
+    fontSize: "16sp"
   }
 }
 
 "#image": {
-        width: "60dp",
-        height: "60dp",
-        right: "10dp"
+  width: "60dp",
+  height: "60dp",
+  right: "10dp"
 }

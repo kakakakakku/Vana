@@ -5,7 +5,7 @@
 		</RightNavButton>
 		<!-- TODO: 長押しで削除できるようにする -->
 		<TableView id="certsList" dataCollection="certifications" dataTransform="transData" dataFilter="filterData" onLongpress="onLongPress">
-			<TableViewRow onClick="doneConfirm" _id="{alloy_id}">
+			<TableViewRow onClick="modifyCerts" _id="{alloy_id}">
 				<View id="certsWrap">
 					<Label class="list" id="task" text="{name}" />
 					<Label class="list" id="category" text="{category}" />

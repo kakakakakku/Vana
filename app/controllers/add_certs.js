@@ -1,3 +1,5 @@
+var args = arguments[0] || {};
+
 $.name.setSelectedRow(0, 0, false);
 $.category.setSelectedRow(0, 0, false);
 
