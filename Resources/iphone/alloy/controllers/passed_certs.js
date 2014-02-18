@@ -1,19 +1,19 @@
 function Controller() {
-    function __alloyId25(e) {
+    function __alloyId34(e) {
         if (e && e.fromAdapter) return;
-        __alloyId25.opts || {};
-        var models = filterData(__alloyId24);
+        __alloyId34.opts || {};
+        var models = filterData(__alloyId33);
         var len = models.length;
         var rows = [];
         for (var i = 0; len > i; i++) {
-            var __alloyId16 = models[i];
-            __alloyId16.__transform = transData(__alloyId16);
-            var __alloyId18 = Ti.UI.createTableViewRow({
-                _id: "undefined" != typeof __alloyId16.__transform["alloy_id"] ? __alloyId16.__transform["alloy_id"] : __alloyId16.get("alloy_id")
+            var __alloyId25 = models[i];
+            __alloyId25.__transform = transData(__alloyId25);
+            var __alloyId27 = Ti.UI.createTableViewRow({
+                _id: "undefined" != typeof __alloyId25.__transform["alloy_id"] ? __alloyId25.__transform["alloy_id"] : __alloyId25.get("alloy_id")
             });
-            rows.push(__alloyId18);
-            doneConfirm ? __alloyId18.addEventListener("click", doneConfirm) : __defers["__alloyId18!click!doneConfirm"] = true;
-            var __alloyId19 = Ti.UI.createView({
+            rows.push(__alloyId27);
+            modifyCerts ? __alloyId27.addEventListener("click", modifyCerts) : __defers["__alloyId27!click!modifyCerts"] = true;
+            var __alloyId28 = Ti.UI.createView({
                 width: Ti.UI.FILL,
                 height: Ti.UI.SIZE,
                 top: "6dp",
@@ -22,38 +22,38 @@ function Controller() {
                 left: "11dp",
                 layout: "horizontal"
             });
-            __alloyId18.add(__alloyId19);
-            var __alloyId20 = Ti.UI.createLabel({
+            __alloyId27.add(__alloyId28);
+            var __alloyId29 = Ti.UI.createLabel({
                 width: Ti.UI.FILL,
                 height: Ti.UI.SIZE,
                 textAlign: "left",
-                text: "undefined" != typeof __alloyId16.__transform["name"] ? __alloyId16.__transform["name"] : __alloyId16.get("name")
+                text: "undefined" != typeof __alloyId25.__transform["name"] ? __alloyId25.__transform["name"] : __alloyId25.get("name")
             });
-            __alloyId19.add(__alloyId20);
-            var __alloyId21 = Ti.UI.createLabel({
+            __alloyId28.add(__alloyId29);
+            var __alloyId30 = Ti.UI.createLabel({
                 width: Ti.UI.FILL,
                 height: Ti.UI.SIZE,
                 textAlign: "left",
-                text: "undefined" != typeof __alloyId16.__transform["category"] ? __alloyId16.__transform["category"] : __alloyId16.get("category")
+                text: "undefined" != typeof __alloyId25.__transform["category"] ? __alloyId25.__transform["category"] : __alloyId25.get("category")
             });
-            __alloyId19.add(__alloyId21);
-            var __alloyId22 = Ti.UI.createLabel({
+            __alloyId28.add(__alloyId30);
+            var __alloyId31 = Ti.UI.createLabel({
                 width: Ti.UI.FILL,
                 height: Ti.UI.SIZE,
                 textAlign: "left",
                 font: {
-                    fontSize: "14sp"
+                    fontSize: "16sp"
                 },
-                text: "undefined" != typeof __alloyId16.__transform["timestamp"] ? __alloyId16.__transform["timestamp"] : __alloyId16.get("timestamp")
+                text: "undefined" != typeof __alloyId25.__transform["timestamp"] ? __alloyId25.__transform["timestamp"] : __alloyId25.get("timestamp")
             });
-            __alloyId19.add(__alloyId22);
-            var __alloyId23 = Ti.UI.createImageView({
+            __alloyId28.add(__alloyId31);
+            var __alloyId32 = Ti.UI.createImageView({
                 width: "60dp",
                 height: "60dp",
                 right: "10dp",
                 image: "/appicon.png"
             });
-            __alloyId18.add(__alloyId23);
+            __alloyId27.add(__alloyId32);
         }
         $.__views.certsList.setData(rows);
     }
@@ -67,15 +67,23 @@ function Controller() {
         addCertsWin = Alloy.createController("add_certs").getView("addCertsWin");
         Alloy.Globals.currentTab.open(addCertsWin);
     }
-    function doneConfirm(e) {
-        var index = e.index;
-        var row = e.row;
-        var task = row.title;
-        Ti.API.info("<<Click>>");
-        Ti.API.info(index);
-        Ti.API.info(task);
-        var db = Titanium.Database.open("certifications");
-        Titanium.API.info("DB PATH : " + db.file.getNativePath());
+    function modifyCerts(e) {
+        e.row;
+        var addCertsWin;
+        var index;
+        var model = Alloy.createCollection("certifications");
+        model.fetch();
+        var rs = model.where({
+            alloy_id: e.rowData._id
+        });
+        if (void 0 === Alloy.Globals.currentTab) {
+            index = Alloy.createController("index");
+            Alloy.Globals.currentTab = index.getView("PassedCertsTab");
+        }
+        addCertsWin = Alloy.createController("add_certs", {
+            name: rs[0].get("name")
+        }).getView();
+        Alloy.Globals.currentTab.open(addCertsWin);
     }
     function onLongPress(e) {
         var index = e.index;
@@ -135,14 +143,15 @@ function Controller() {
     addCert ? $.__views.addButton.addEventListener("click", addCert) : __defers["$.__views.addButton!click!addCert"] = true;
     $.__views.passedCerts.rightNavButton = $.__views.addButton;
     $.__views.certsList = Ti.UI.createTableView({
+        backgroundColor: "#F0E68C",
         id: "certsList"
     });
     $.__views.passedCerts.add($.__views.certsList);
-    var __alloyId24 = Alloy.Collections["certifications"] || certifications;
-    __alloyId24.on("fetch destroy change add remove reset", __alloyId25);
+    var __alloyId33 = Alloy.Collections["certifications"] || certifications;
+    __alloyId33.on("fetch destroy change add remove reset", __alloyId34);
     onLongPress ? $.__views.certsList.addEventListener("longpress", onLongPress) : __defers["$.__views.certsList!longpress!onLongPress"] = true;
     exports.destroy = function() {
-        __alloyId24.off("fetch destroy change add remove reset", __alloyId25);
+        __alloyId33.off("fetch destroy change add remove reset", __alloyId34);
     };
     _.extend($, $.__views);
     var dialogs = require("alloy/dialogs");
@@ -151,7 +160,7 @@ function Controller() {
     Titanium.Admob = require("ti.admob");
     $.passedCerts.add(createAdView());
     __defers["$.__views.addButton!click!addCert"] && $.__views.addButton.addEventListener("click", addCert);
-    __defers["__alloyId18!click!doneConfirm"] && __alloyId18.addEventListener("click", doneConfirm);
+    __defers["__alloyId27!click!modifyCerts"] && __alloyId27.addEventListener("click", modifyCerts);
     __defers["$.__views.certsList!longpress!onLongPress"] && $.__views.certsList.addEventListener("longpress", onLongPress);
     _.extend($, exports);
 }

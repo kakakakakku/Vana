@@ -4,10 +4,19 @@
 			<Label>資格名</Label>
 			<Picker id="name" onChange="setName" selectionIndicator="true" useSpinner="true">
 				<PickerColumn id="certifications">
-					<PickerRow title="データベーススペシャリスト" />
-					<PickerRow title="ネットワークスペシャリスト" />
-					<PickerRow title="セキュリティスペシャリスト" />
-					<PickerRow title="エンベデッドスペシャリスト" />
+					<PickerRow title="XML Master Basic" />
+					<PickerRow title="XML Master Professional Application Developer" />
+					<PickerRow title="Sun Certified Programmer for the Java 2 Platform" />
+					<PickerRow title="LPIC-1 Certification" />
+					<PickerRow title="LPIC-2 Certification" />
+					<PickerRow title="Ruby Association Certified Ruby Programmer Silver" />
+					<PickerRow title="Ruby Association Certified Ruby Programmer Gold" />
+					<PickerRow title="Titanium Certified Developer" />
+					<PickerRow title="Titanium Certified Expert" />
+					<PickerRow title="基本情報技術者試験" />
+					<PickerRow title="応用情報技術者試験" />
+					<PickerRow title="データベーススペシャリスト試験" />
+					<PickerRow title="情報セキュリティスペシャリスト試験" />
 				</PickerColumn>
 			</Picker>
 			<Label>カテゴリー</Label>
@@ -15,7 +24,7 @@
 				<PickerColumn id="categories">
 					<PickerRow title="プログラミング" />
 					<PickerRow title="サーバー" />
-					<PickerRow title="マークアップ" />
+					<PickerRow title="スマートフォン" />
 				</PickerColumn>
 			</Picker>
 			<Label>資格取得日</Label>

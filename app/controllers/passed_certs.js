@@ -22,6 +22,26 @@ function doneConfirm(e) {
 	Titanium.API.info('DB PATH : ' + db.file.getNativePath());
 }
 
+
+function modifyCerts(e) {
+	var row = e.row;
+	var addCertsWin;
+	var index;
+
+	var model = Alloy.createCollection('certifications');
+	model.fetch();
+	var rs = model.where({alloy_id: e.rowData._id});
+
+	if (Alloy.Globals.currentTab === undefined) {
+		index = Alloy.createController("index");
+		Alloy.Globals.currentTab = index.getView("PassedCertsTab");
+	}
+
+	addCertsWin = Alloy.createController("add_certs", {name: rs[0].get("name")}).getView();
+	Alloy.Globals.currentTab.open(addCertsWin);
+}
+
+
 function onLongPress(e) {
 	var index = e.index;
 	Ti.API.info("LongPress: index=" + index);
