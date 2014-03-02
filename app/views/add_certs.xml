@@ -2,6 +2,8 @@
 	<Window id="addCertsWin" title="Passed Infomation" tabBarHidden="true">
 		<ScrollView id="addCertsWrap" layout="vertical" onClick="blurTextArea">
 			<Label>資格名</Label>
+			<TextField id="textField" onFocus="selectCert" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED" color="#336699" top="10" left="10" width="250" height="30" onClick="selectCert" />
+			<Label onClick="selectCert">ここを押して下さい</Label>
 			<Picker id="name" onChange="setName" selectionIndicator="true" useSpinner="true">
 				<PickerColumn id="certifications">
 					<PickerRow title="XML Master Basic" />

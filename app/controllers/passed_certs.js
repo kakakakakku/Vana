@@ -91,4 +91,4 @@ function createAdView() {
 	return adview;
 }
 // 広告を非表示にする場合はここをコメントアウトする
-$.passedCerts.add(createAdView());
+// $.passedCerts.add(createAdView());

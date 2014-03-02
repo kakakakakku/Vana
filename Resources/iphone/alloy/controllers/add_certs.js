@@ -29,6 +29,16 @@ function Controller() {
     function setCategory(e) {
         category = e.row.title;
     }
+    function selectCert() {
+        alert("selectCert()");
+        var index;
+        if (void 0 === Alloy.Globals.currentTab) {
+            index = Alloy.createController("index");
+            Alloy.Globals.currentTab = index.getView("PassedCertsTab");
+        }
+        selectCertWin = Alloy.createController("select_cert_list").getView("selectCertWin");
+        Alloy.Globals.currentTab.open(selectCertWin);
+    }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "add_certs";
     arguments[0] ? arguments[0]["__parentSymbol"] : null;
@@ -68,6 +78,37 @@ function Controller() {
         id: "__alloyId0"
     });
     $.__views.addCertsWrap.add($.__views.__alloyId0);
+    $.__views.textField = Ti.UI.createTextField({
+        id: "textField",
+        borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
+        color: "#336699",
+        top: "10",
+        left: "10",
+        width: "250",
+        height: "30"
+    });
+    $.__views.addCertsWrap.add($.__views.textField);
+    selectCert ? $.__views.textField.addEventListener("focus", selectCert) : __defers["$.__views.textField!focus!selectCert"] = true;
+    selectCert ? $.__views.textField.addEventListener("click", selectCert) : __defers["$.__views.textField!click!selectCert"] = true;
+    $.__views.__alloyId1 = Ti.UI.createLabel({
+        font: {
+            fontSize: "16sp",
+            fontWeight: "bold"
+        },
+        textAlign: "left",
+        color: "#333333",
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        top: "11dp",
+        bottom: "11dp",
+        left: "11dp",
+        right: "11dp",
+        backgroundColor: "#FFF000",
+        text: "ここを押して下さい",
+        id: "__alloyId1"
+    });
+    $.__views.addCertsWrap.add($.__views.__alloyId1);
+    selectCert ? $.__views.__alloyId1.addEventListener("click", selectCert) : __defers["$.__views.__alloyId1!click!selectCert"] = true;
     $.__views.name = Ti.UI.createPicker({
         type: Ti.UI.PICKER_TYPE_PLAIN,
         width: Ti.UI.FILL,
@@ -77,79 +118,79 @@ function Controller() {
         useSpinner: "true"
     });
     $.__views.addCertsWrap.add($.__views.name);
-    var __alloyId1 = [];
+    var __alloyId2 = [];
     $.__views.certifications = Ti.UI.createPickerColumn({
         id: "certifications"
     });
-    __alloyId1.push($.__views.certifications);
-    $.__views.__alloyId2 = Ti.UI.createPickerRow({
-        title: "XML Master Basic",
-        id: "__alloyId2"
-    });
-    $.__views.certifications.addRow($.__views.__alloyId2);
+    __alloyId2.push($.__views.certifications);
     $.__views.__alloyId3 = Ti.UI.createPickerRow({
-        title: "XML Master Professional Application Developer",
+        title: "XML Master Basic",
         id: "__alloyId3"
     });
     $.__views.certifications.addRow($.__views.__alloyId3);
     $.__views.__alloyId4 = Ti.UI.createPickerRow({
-        title: "Sun Certified Programmer for the Java 2 Platform",
+        title: "XML Master Professional Application Developer",
         id: "__alloyId4"
     });
     $.__views.certifications.addRow($.__views.__alloyId4);
     $.__views.__alloyId5 = Ti.UI.createPickerRow({
-        title: "LPIC-1 Certification",
+        title: "Sun Certified Programmer for the Java 2 Platform",
         id: "__alloyId5"
     });
     $.__views.certifications.addRow($.__views.__alloyId5);
     $.__views.__alloyId6 = Ti.UI.createPickerRow({
-        title: "LPIC-2 Certification",
+        title: "LPIC-1 Certification",
         id: "__alloyId6"
     });
     $.__views.certifications.addRow($.__views.__alloyId6);
     $.__views.__alloyId7 = Ti.UI.createPickerRow({
-        title: "Ruby Association Certified Ruby Programmer Silver",
+        title: "LPIC-2 Certification",
         id: "__alloyId7"
     });
     $.__views.certifications.addRow($.__views.__alloyId7);
     $.__views.__alloyId8 = Ti.UI.createPickerRow({
-        title: "Ruby Association Certified Ruby Programmer Gold",
+        title: "Ruby Association Certified Ruby Programmer Silver",
         id: "__alloyId8"
     });
     $.__views.certifications.addRow($.__views.__alloyId8);
     $.__views.__alloyId9 = Ti.UI.createPickerRow({
-        title: "Titanium Certified Developer",
+        title: "Ruby Association Certified Ruby Programmer Gold",
         id: "__alloyId9"
     });
     $.__views.certifications.addRow($.__views.__alloyId9);
     $.__views.__alloyId10 = Ti.UI.createPickerRow({
-        title: "Titanium Certified Expert",
+        title: "Titanium Certified Developer",
         id: "__alloyId10"
     });
     $.__views.certifications.addRow($.__views.__alloyId10);
     $.__views.__alloyId11 = Ti.UI.createPickerRow({
-        title: "基本情報技術者試験",
+        title: "Titanium Certified Expert",
         id: "__alloyId11"
     });
     $.__views.certifications.addRow($.__views.__alloyId11);
     $.__views.__alloyId12 = Ti.UI.createPickerRow({
-        title: "応用情報技術者試験",
+        title: "基本情報技術者試験",
         id: "__alloyId12"
     });
     $.__views.certifications.addRow($.__views.__alloyId12);
     $.__views.__alloyId13 = Ti.UI.createPickerRow({
-        title: "データベーススペシャリスト試験",
+        title: "応用情報技術者試験",
         id: "__alloyId13"
     });
     $.__views.certifications.addRow($.__views.__alloyId13);
     $.__views.__alloyId14 = Ti.UI.createPickerRow({
-        title: "情報セキュリティスペシャリスト試験",
+        title: "データベーススペシャリスト試験",
         id: "__alloyId14"
     });
     $.__views.certifications.addRow($.__views.__alloyId14);
-    $.__views.name.add(__alloyId1);
+    $.__views.__alloyId15 = Ti.UI.createPickerRow({
+        title: "情報セキュリティスペシャリスト試験",
+        id: "__alloyId15"
+    });
+    $.__views.certifications.addRow($.__views.__alloyId15);
+    $.__views.name.add(__alloyId2);
     setName ? $.__views.name.addEventListener("change", setName) : __defers["$.__views.name!change!setName"] = true;
-    $.__views.__alloyId15 = Ti.UI.createLabel({
+    $.__views.__alloyId16 = Ti.UI.createLabel({
         font: {
             fontSize: "16sp",
             fontWeight: "bold"
@@ -164,61 +205,37 @@ function Controller() {
         right: "11dp",
         backgroundColor: "#FFF000",
         text: "カテゴリー",
-        id: "__alloyId15"
+        id: "__alloyId16"
     });
-    $.__views.addCertsWrap.add($.__views.__alloyId15);
+    $.__views.addCertsWrap.add($.__views.__alloyId16);
     $.__views.category = Ti.UI.createPicker({
         id: "category",
         selectionIndicator: "true",
         useSpinner: "true"
     });
     $.__views.addCertsWrap.add($.__views.category);
-    var __alloyId16 = [];
+    var __alloyId17 = [];
     $.__views.categories = Ti.UI.createPickerColumn({
         id: "categories"
     });
-    __alloyId16.push($.__views.categories);
-    $.__views.__alloyId17 = Ti.UI.createPickerRow({
-        title: "プログラミング",
-        id: "__alloyId17"
-    });
-    $.__views.categories.addRow($.__views.__alloyId17);
+    __alloyId17.push($.__views.categories);
     $.__views.__alloyId18 = Ti.UI.createPickerRow({
-        title: "サーバー",
+        title: "プログラミング",
         id: "__alloyId18"
     });
     $.__views.categories.addRow($.__views.__alloyId18);
     $.__views.__alloyId19 = Ti.UI.createPickerRow({
-        title: "スマートフォン",
+        title: "サーバー",
         id: "__alloyId19"
     });
     $.__views.categories.addRow($.__views.__alloyId19);
-    $.__views.category.add(__alloyId16);
-    setCategory ? $.__views.category.addEventListener("change", setCategory) : __defers["$.__views.category!change!setCategory"] = true;
-    $.__views.__alloyId20 = Ti.UI.createLabel({
-        font: {
-            fontSize: "16sp",
-            fontWeight: "bold"
-        },
-        textAlign: "left",
-        color: "#333333",
-        width: Ti.UI.SIZE,
-        height: Ti.UI.SIZE,
-        top: "11dp",
-        bottom: "11dp",
-        left: "11dp",
-        right: "11dp",
-        backgroundColor: "#FFF000",
-        text: "資格取得日",
+    $.__views.__alloyId20 = Ti.UI.createPickerRow({
+        title: "スマートフォン",
         id: "__alloyId20"
     });
-    $.__views.addCertsWrap.add($.__views.__alloyId20);
-    $.__views.timestamp = Ti.UI.createPicker({
-        type: Ti.UI.PICKER_TYPE_DATE,
-        locale: "ja",
-        id: "timestamp"
-    });
-    $.__views.addCertsWrap.add($.__views.timestamp);
+    $.__views.categories.addRow($.__views.__alloyId20);
+    $.__views.category.add(__alloyId17);
+    setCategory ? $.__views.category.addEventListener("change", setCategory) : __defers["$.__views.category!change!setCategory"] = true;
     $.__views.__alloyId21 = Ti.UI.createLabel({
         font: {
             fontSize: "16sp",
@@ -233,10 +250,34 @@ function Controller() {
         left: "11dp",
         right: "11dp",
         backgroundColor: "#FFF000",
-        text: "コメント",
+        text: "資格取得日",
         id: "__alloyId21"
     });
     $.__views.addCertsWrap.add($.__views.__alloyId21);
+    $.__views.timestamp = Ti.UI.createPicker({
+        type: Ti.UI.PICKER_TYPE_DATE,
+        locale: "ja",
+        id: "timestamp"
+    });
+    $.__views.addCertsWrap.add($.__views.timestamp);
+    $.__views.__alloyId22 = Ti.UI.createLabel({
+        font: {
+            fontSize: "16sp",
+            fontWeight: "bold"
+        },
+        textAlign: "left",
+        color: "#333333",
+        width: Ti.UI.SIZE,
+        height: Ti.UI.SIZE,
+        top: "11dp",
+        bottom: "11dp",
+        left: "11dp",
+        right: "11dp",
+        backgroundColor: "#FFF000",
+        text: "コメント",
+        id: "__alloyId22"
+    });
+    $.__views.addCertsWrap.add($.__views.__alloyId22);
     $.__views.comment = Ti.UI.createTextArea({
         font: {
             fontSize: "16sp"
@@ -271,6 +312,9 @@ function Controller() {
     var name;
     var category;
     __defers["$.__views.addCertsWrap!click!blurTextArea"] && $.__views.addCertsWrap.addEventListener("click", blurTextArea);
+    __defers["$.__views.textField!focus!selectCert"] && $.__views.textField.addEventListener("focus", selectCert);
+    __defers["$.__views.textField!click!selectCert"] && $.__views.textField.addEventListener("click", selectCert);
+    __defers["$.__views.__alloyId1!click!selectCert"] && $.__views.__alloyId1.addEventListener("click", selectCert);
     __defers["$.__views.name!change!setName"] && $.__views.name.addEventListener("change", setName);
     __defers["$.__views.category!change!setCategory"] && $.__views.category.addEventListener("change", setCategory);
     __defers["$.__views.saveCert!click!saveCert"] && $.__views.saveCert.addEventListener("click", saveCert);

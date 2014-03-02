@@ -8,7 +8,7 @@ function blurTextArea() {
 }
 
 function saveCert() {
-	
+
 	timestamp = timestamp || Date.now();
 	var certifications = Alloy.createModel("certifications", {
 		name : name,
@@ -44,4 +44,17 @@ function setName(e) {
 var category;
 function setCategory(e) {
 	category = (e.row.title);
+}
+
+function selectCert() {
+	alert("selectCert()");
+	var addCertsWin;
+	var index;
+	if (Alloy.Globals.currentTab === undefined) {
+		index = Alloy.createController("index");
+		Alloy.Globals.currentTab = index.getView("PassedCertsTab");
+	}
+	selectCertWin = Alloy.createController("select_cert_list").getView("selectCertWin");
+	Alloy.Globals.currentTab.open(selectCertWin);
+	
 }

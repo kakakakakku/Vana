@@ -13,20 +13,20 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    var __alloyId22 = [];
-    $.__views.__alloyId23 = Alloy.createController("passed_certs", {
-        id: "__alloyId23"
+    var __alloyId23 = [];
+    $.__views.__alloyId24 = Alloy.createController("passed_certs", {
+        id: "__alloyId24"
     });
     $.__views.PassedCertsTab = Ti.UI.createTab({
-        window: $.__views.__alloyId23.getViewEx({
+        window: $.__views.__alloyId24.getViewEx({
             recurse: true
         }),
         title: "Passed Certifications",
         id: "PassedCertsTab"
     });
-    __alloyId22.push($.__views.PassedCertsTab);
+    __alloyId23.push($.__views.PassedCertsTab);
     $.__views.index = Ti.UI.createTabGroup({
-        tabs: __alloyId22,
+        tabs: __alloyId23,
         id: "index"
     });
     $.__views.index && $.addTopLevelView($.__views.index);

@@ -1,0 +1,15 @@
+<Alloy>
+	<Window id="selectCertWin">
+		<TableView id="selectCertTable">
+			<TableViewRow id="a">
+				<View id="view" backgroundColor="red" width="20" height="20"/>
+			</TableViewRow>
+			<TableViewRow id="b">
+				<View id="view" backgroundColor="yellow" width="20" height="20"/>
+			</TableViewRow>
+			<TableViewRow id="c">
+				<View id="view" backgroundColor="blue" width="20" height="20"/>
+			</TableViewRow>
+		</TableView>
+	</Window>
+</Alloy>
